@@ -1,0 +1,60 @@
+# depslib dependency file v1.0
+1496971289 source:/Users/nedisonn/Google Drive/LAPROII2017-T2/cozim.cpp
+	"cozim.h"
+
+1496971422 /Users/nedisonn/Google Drive/LAPROII2017-T2/cozim.h
+	<iostream>
+	"fila.h"
+	"pedido.h"
+	"mont.h"
+
+1496969553 /Users/nedisonn/Google Drive/LAPROII2017-T2/pedido.h
+	<iostream>
+	"fila.h"
+
+1496970467 /Users/nedisonn/Google Drive/LAPROII2017-T2/fila.h
+	<iostream>
+	"nodoFila.h"
+	"pedido.h"
+
+1496971430 /Users/nedisonn/Google Drive/LAPROII2017-T2/nodoFila.h
+	<iostream>
+	"pedido.h"
+
+1496971377 /Users/nedisonn/Google Drive/LAPROII2017-T2/mont.h
+	<iostream>
+	"fila.h"
+	"pedido.h"
+
+1496971454 source:/Users/nedisonn/Google Drive/LAPROII2017-T2/empac.cpp
+	"empac.h"
+
+1496971418 /Users/nedisonn/Google Drive/LAPROII2017-T2/empac.h
+	<iostream>
+	"fila.h"
+	"pedido.h"
+	"mont.h"
+	"cozim.h"
+
+1496970499 source:/Users/nedisonn/Google Drive/LAPROII2017-T2/fila.cpp
+	"fila.h"
+
+1496970647 source:/Users/nedisonn/Google Drive/LAPROII2017-T2/main.cpp
+	<iostream>
+	<sstream>
+	<string>
+	"fila.h"
+	"pedido.h"
+	"cozim.h"
+	"mont.h"
+	"empac.h"
+
+1496971461 source:/Users/nedisonn/Google Drive/LAPROII2017-T2/mont.cpp
+	"mont.h"
+
+1496968203 source:/Users/nedisonn/Google Drive/LAPROII2017-T2/nodoFila.cpp
+	"nodoFila.h"
+
+1496969547 source:/Users/nedisonn/Google Drive/LAPROII2017-T2/pedido.cpp
+	"pedido.h"
+
