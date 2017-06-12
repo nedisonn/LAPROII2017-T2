@@ -17,11 +17,13 @@ class Fila{
 
         int tam;
 
+        Fila();
+        ~Fila();
+
 		void adiciona(Pedido *aux);
 		Pedido* retira();
-		//bool vazio();
         int tamanho();
-
+        bool vazia(); 
 
 
 };

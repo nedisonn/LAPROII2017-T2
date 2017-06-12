@@ -2,9 +2,7 @@
 #define _EMPAC_H_
 
 #include <iostream>
-//#include <ctime.h>
 #include "fila.h"
-
 #include "pedido.h"
 #include "mont.h"
 #include "cozim.h"
@@ -13,6 +11,7 @@ class Empac
 {
 public:
     bool disponivel; //conferir se o empacotamento esta disponivel
+    bool pronto;
     int tRest; //tempo restante do empacotamento   tempo total - (tempo atual - tempo chegada)
     int tAtual;
     int t; //tempo total de empacotamento
@@ -22,10 +21,12 @@ public:
 
     void setTempoAt(int aux);
     bool getDisp();
+    void setDisp(bool aux);
 
     Pedido* getPedido();
     void pedido(Pedido *P);
     Empac();
     ~Empac();
+    bool getPronto();
 };
 #endif

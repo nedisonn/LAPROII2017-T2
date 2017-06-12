@@ -2,7 +2,8 @@
 #define _PEDIDO_H_
 
 #include <iostream>
-//#include <ctime.h>
+#include <cstdlib>
+#include <stdlib.h>
 #include "fila.h"
 using namespace std;
 
@@ -15,7 +16,7 @@ int iTempo; //instante de tempo que chegou
 
 
 int getNum(); //retorna numero de controle
-int getCtrl();
+
 
 int getQtdPizza(); //retorna quantidade de pizzas
 void setQtdPizza(int aux); //adiciona pizzas
@@ -28,7 +29,6 @@ int getITempo();
 Pedido();
 ~Pedido();
 
-Pedido getPedido();
 Pedido(int tempo, int numP);
 };
 #endif
