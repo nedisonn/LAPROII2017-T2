@@ -29,6 +29,14 @@ int Pedido::getITempo(){
     return iTempo;
 }
 
+int Pedido::getProcTempo(){
+
+    return procTempo;
+}
+void Pedido::setProcTempo(int aux){
+    procTempo = aux; 
+}
+
 int Pedido::getNum(){
     return num;
 }

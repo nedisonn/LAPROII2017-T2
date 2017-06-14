@@ -17,7 +17,7 @@ public:
     int t; //tempo total de montagem
     Pedido *Atual;
 
-    int getTRest(int tempo); //retorna tempo restante de montagem
+    int getTRest(float  tempo); //retorna tempo restante de montagem
 
     void setTempoAt(int aux);
 
@@ -26,7 +26,7 @@ public:
 
     bool getPronto();
 
-    void pedido(Pedido *P);
+    void pedido(Pedido *P, float tempo);
     Pedido* getPedido();
     Mont();
     ~Mont();

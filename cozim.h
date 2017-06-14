@@ -23,8 +23,8 @@ public:
     
     void setTempoAt(int aux);
 
-    int getTRest(int tempo); //retorna tempo restante de cozimento
-    void pedido(Pedido *P);
+    int getTRest(float tempo); //retorna tempo restante de cozimento
+    void pedido(Pedido *P, float tempo);
 
     Pedido* getPedido();
 

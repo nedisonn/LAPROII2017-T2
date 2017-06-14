@@ -13,11 +13,13 @@ int num; //numero do pedido
 int qtdPizza; //uma certa quantidade de pizzas (sorteada entre 1 e 3),
 int qtdPasteis; //uma certa quantidade de pasteis (sorteada entre 1 e 5) e o
 int iTempo; //instante de tempo que chegou
+int procTempo; // instante de tempo que entrou em algum processo
 
 
 int getNum(); //retorna numero de controle
 
-
+int getProcTempo();
+void setProcTempo(int aux);
 int getQtdPizza(); //retorna quantidade de pizzas
 void setQtdPizza(int aux); //adiciona pizzas
 

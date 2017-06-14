@@ -17,14 +17,14 @@ public:
     int t; //tempo total de empacotamento
     Pedido *Atual;
 
-    int getTRest(int tempo); //retorna tempo restante de empacotamento
+    int getTRest(float  tempo); //retorna tempo restante de empacotamento
 
     void setTempoAt(int aux);
     bool getDisp();
     void setDisp(bool aux);
 
     Pedido* getPedido();
-    void pedido(Pedido *P);
+    void pedido(Pedido *P, float tempo);
     Empac();
     ~Empac();
     bool getPronto();

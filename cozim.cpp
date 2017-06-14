@@ -10,9 +10,9 @@ Cozim::Cozim(){
 }
 Cozim::~Cozim(){
 }
-int Cozim::getTRest(int tempo)
+int Cozim::getTRest(float  tempo)
 {
-    tRest = Atual->getITempo() - tempo + t;
+    tRest = Atual->getProcTempo() - tempo + t;
     return tRest;
 } //retorna tempo restante de montagem
 
@@ -28,11 +28,12 @@ bool Cozim::getDisp()
     return disponivel;
 }
 
-void Cozim::pedido(Pedido *P) {
+void Cozim::pedido(Pedido *P, float tempo) {
     //cout << "Cozim pedido" << endl;
     Atual = P;
     t = Atual->getQtdPasteis()*2 + Atual->getQtdPizza()*4;
     disponivel = false;
+     Atual->setProcTempo(tempo);
     }
 
 Pedido* Cozim::getPedido()

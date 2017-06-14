@@ -10,9 +10,9 @@ Empac::Empac(){
 }
 Empac::~Empac(){
 }
-int Empac::getTRest(int tempo)
+int Empac::getTRest(float tempo)
 {
-    tRest = Atual->getITempo() - tempo + t;
+    tRest = Atual->getProcTempo() - tempo + t;
     return tRest;
 } //retorna tempo restante de montagem
 
@@ -27,11 +27,12 @@ bool Empac::getDisp()
     return disponivel;
 }
 
-void Empac::pedido(Pedido *P) {
+void Empac::pedido(Pedido *P, float tempo) {
    // cout << "Cozim pedido" << endl;
     Atual = P;
     t = Atual->getQtdPasteis()*1 + Atual->getQtdPizza()*1;
     disponivel = false;
+    Atual->setProcTempo(tempo);
     }
 Pedido* Empac::getPedido()
 {

@@ -10,9 +10,9 @@ Mont::Mont(){
 }
 Mont::~Mont(){
 }
-int Mont::getTRest(int tempo)
+int Mont::getTRest(float  tempo)
 {
-    tRest = Atual->getITempo() - tempo + t;
+    tRest = Atual->getProcTempo() - tempo + t;
     return tRest;
 } //retorna tempo restante de montagem
 
@@ -27,11 +27,12 @@ bool Mont::getDisp()
     return disponivel;
 }
 
-void Mont::pedido(Pedido *P) {
+void Mont::pedido(Pedido *P, float tempo) {
     //cout << "Mont pedido" << endl;
     Atual = P;
     t = Atual->getQtdPasteis()*1 + Atual->getQtdPizza()*3;
     disponivel = false;
+     Atual->setProcTempo(tempo);
 }
 
 Pedido* Mont::getPedido()

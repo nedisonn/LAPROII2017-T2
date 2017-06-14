@@ -27,10 +27,20 @@ int main ()
     tempo = 0;
     aux1 = 0;
     entregues = 0;
+    control = 0;
     while(cin.get() != 'q')
     {
 
-        control = rand() % 100;
+        control = rand()%100 +1;
+           if (control > 80)
+        {
+            numP++;
+            P = new Pedido(tempo, numP); //novo pedido
+            M.adiciona(P); // adiciona o pedido a fila
+        } 
+       
+
+
         M1.setTempoAt(tempo);
         M2.setTempoAt(tempo);
         M3.setTempoAt(tempo);
@@ -41,129 +51,161 @@ int main ()
         E2.setTempoAt(tempo);
         E3.setTempoAt(tempo);
 
-        if (control > 80)
-        {
-            numP++;
-            P = new Pedido(tempo, numP); //novo pedido
-            M.adiciona(P); // adiciona o pedido a fila
-            if (M1.getDisp() == true)
-            {
-                if (M.vazia() != true) aux = M.retira();
-                M1.pedido(aux);
-            }
-            else if (M2.getDisp() == true)
-            {
-                if (M.vazia() != true) aux = M.retira();
-                M2.pedido(aux);
-            }
-            else if (M3.getDisp() == true)
-            {
-                if (M.vazia() != true) aux = M.retira();
-                M3.pedido(aux);
-            }
-        }
+     
 
+        if (M1.getDisp() == true)
+            {
+                if (M.vazia() != true){
+                
+                aux = M.retira();
+               if (aux != NULL){
+                M1.pedido(aux, tempo);}}
+            }
+            if (M2.getDisp() == true)
+            {
+                if (M.vazia() != true){
+                    
+                aux = M.retira();
+               if (aux != NULL){ 
+                M2.pedido(aux, tempo);}}
+            }
+            if (M3.getDisp() == true)
+            {
+                if (M.vazia() != true) {
+                
+                aux = M.retira();
+                if (aux != NULL){
+                M3.pedido(aux, tempo);}}
+            }
 //montador pronto
-        if (M1.getDisp() == false || M2.getDisp() == false || M3.getDisp() == false)
-        {
+        
                 if (M1.getDisp() == false){
-                if (M1.getPronto() == true)
-                {
-                    aux = M1.getPedido();
-                F.adiciona(aux);
+                    if (M1.getPronto() == true)
+                    {
+                   
+                        aux = M1.getPedido();
+                        if (aux != NULL){
+                            F.adiciona(aux);
+                            M1.setDisp(true);}
+                    }}
+                if (M2.getDisp() == false){
+                    if (M2.getPronto() == true)
+                    {
+                    
+                         aux = M2.getPedido();
+                        if (aux != NULL){
+                            F.adiciona(aux);
 
-                    M1.setDisp(true);
-                }}
-                 if (M2.getDisp() == false){
-                if (M2.getPronto() == true)
-                {
-                    aux = M2.getPedido();
-                F.adiciona(aux);
-
-                    M2.setDisp(true);
-                }}
+                            M2.setDisp(true);}
+                    }}
                 if (M3.getDisp() == false){
-                if (M3.getPronto() == true)
-                {
-                    aux = M3.getPedido();
+                    if (M3.getPronto() == true)
+                    {
+                 
+                        aux = M3.getPedido();
 
-                F.adiciona(aux);
+                        if (aux != NULL){
+                            F.adiciona(aux);
 
-                    M3.setDisp(true);
-                }}
+                             M3.setDisp(true);}
+                    }}
 
-        }
+        
 
 
 //
-        if(F.vazia() != true)
-        {
+        
             if (F1.getDisp() == true)
             {
-                if (F.vazia() != true) aux = F.retira();
-                F1.pedido(aux);
+                if (F.vazia() != true){
+                  
+                aux = F.retira();
+                if (aux != NULL){
+                F1.pedido(aux, tempo);}}
             }
-            else if (F2.getDisp() == true)
+            if (F2.getDisp() == true)
             {
-              if (F.vazia() != true)  aux = F.retira();
-                F2.pedido(aux);
+                if (F.vazia() != true){
+                    
+              aux = F.retira();
+                if (aux != NULL){
+                F2.pedido(aux, tempo);}}
             }
-            else if (F3.getDisp() == true)
+            if (F3.getDisp() == true)
             {
-              if (F.vazia() != true)  aux = F.retira();
-                F3.pedido(aux);
+              if (F.vazia() != true){
+                 
+            aux = F.retira();
+               if (aux != NULL){ 
+              F3.pedido(aux, tempo);}}
             }
-        }
+        
 
 //forno pronto
-        if (F1.getDisp() == false || F2.getDisp() == false || F3.getDisp() == false)
-        {
+        
              if (F1.getDisp() == false){
                 if (F1.getPronto() == true)
                 {
+                    
                     aux = F1.getPedido();
-                     E.adiciona(aux);
-                    F3.setDisp(true);
+                     if (aux != NULL){
+                         E.adiciona(aux);
+                     F1.setDisp(true);}
                 }}
+
                  if (F2.getDisp() == false){
                 if (F2.getPronto() == true)
                 {
+                   
                     aux = F2.getPedido();
-                     E.adiciona(aux);
-                    F2.setDisp(true);
+                     if (aux != NULL){
+                         E.adiciona(aux);
+                     F2.setDisp(true);}
                 }}
 
                  if (F3.getDisp() == false){
                 if (F3.getPronto() == true)
                 {
+                   
                     aux = F3.getPedido();
-                 E.adiciona(aux);
-                    F3.setDisp(true);
+                 if (aux != NULL){
+                     E.adiciona(aux);
+                 F3.setDisp(true);}
                 }}
 
 
 
-        }
+        
 
 //
-        if (E.vazia() != true)
-        {
+        
             if (E1.getDisp() == true)
             {
-                aux = E.retira();
-                E1.pedido(aux);
+                if (E.vazia() != true)
+                 {
+                    aux = E.retira();
+                      if (aux != NULL){
+                       E1.pedido(aux, tempo);}}
             }
-            else if (E2.getDisp() == true)
+
+            if (E2.getDisp() == true)
             {
+               if (E.vazia() != true)
+        {
                 aux = E.retira();
-                E2.pedido(aux);
+                if (aux != NULL){
+        E2.pedido(aux, tempo);}}
             }
-            else if (E3.getDisp() == true)
+
+            if (E3.getDisp() == true)
             {
+                if (E.vazia() != true)
+        {
                 aux = E.retira();
-                E3.pedido(aux);
+                if (aux != NULL){
+        E3.pedido(aux, tempo);}}
             }
-        }
+        
         system("clear");
         cout << "Status das listas"<< endl;
 
@@ -212,44 +254,54 @@ int main ()
         else
             cout << "Empacotador 3 vazio" << endl;
 
-if(aux->getNum() == 1) {
-    aux1 = aux->getITempo();
-}
 
-   tempoMedio = entregues/(tempo-aux1);
-    cout << "Tempo medio de atendimento: " << tempoMedio << endl;
-
-    cout << entregues << " pedidos entregues." << endl;
+    
+if (entregues > 0) {
+    cout << entregues << " pedidos entregues em " << tempo << " instantes."<< endl;
+   tempoMedio = aux1/entregues;
+cout << "Tempo medio de atendimento: " << tempoMedio << endl;}
 
 
 //aparecer na tela por mais tempo...
             if (E1.getDisp() == false ){
                 if (E1.getPronto() == true)
                 {
+                    
                     aux = E1.getPedido();
-                    cout <<"Pedido de numero "<<  aux->getNum() << " ,foi entregue"<< endl;
+                    if (aux != NULL){
+                        cout <<"Pedido de numero "<<  aux->getNum() << ", com " << aux->getQtdPasteis() << " pasteis e " << aux->getQtdPizza() << " pizzas, foi entregue."<< endl;
                     E1.setDisp(true);
                     entregues++;
+                    aux1 = aux1 + aux->getITempo();
+                    delete aux;}
                 }}
 
                 if(E2.getDisp() == false){
                 if (E2.getPronto() == true)
                 {
+                    
                     aux = E2.getPedido();
-                    cout <<"Pedido de numero "<<  aux->getNum() << " ,foi entregue"<< endl;
+                    if (aux != NULL){cout <<"Pedido de numero "<<  aux->getNum() <<", com " << aux->getQtdPasteis() << " pasteis e " << aux->getQtdPizza() << " pizzas, foi entregue."<< endl;
                     E2.setDisp(true);
                     entregues++;
+                    aux1 = aux1 + aux->getITempo();
+                    delete aux;}
                 }}
 
                 if(E3.getDisp() == false){
                 if (E3.getPronto() == true)
                 {
+                    
                     aux = E3.getPedido();
-                    cout <<"Pedido de numero "<<  aux->getNum() << " ,foi entregue"<< endl;
+                    if (aux != NULL){cout <<"Pedido de numero "<<  aux->getNum() <<", com " << aux->getQtdPasteis() << " pasteis e " << aux->getQtdPizza() << " pizzas, foi entregue."<< endl;
 
                     E3.setDisp(true);
                     entregues++;
+                    aux1 = aux1 + aux->getITempo();
+                    delete aux;
+                    }
                 }}
+
 
 
 
@@ -257,6 +309,7 @@ if(aux->getNum() == 1) {
 
         tempo++;
         //cout << tempo << endl;
+        cout << control << endl;
 
     }
 
